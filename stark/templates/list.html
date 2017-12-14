@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表页面</title>
+    <link rel="stylesheet" href={% static "bootstrap-3.3.7-dist/css/bootstrap.css" %}>
+    <style>
+       .title{
+           text-align: center;
+       }
+        .row{
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+<h3 class="title">列表</h3>
+<div class="container">
+    <div class="row">
+        <table class="table table_border">
+            <thead>
+            <tr>
+                {% for head in head_list %}
+                    <th>{{ head }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for obj in data_list %}
+            <tr>
+            {% for words in obj %}
+                <td>{{ words }}</td>
+            {% endfor %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
