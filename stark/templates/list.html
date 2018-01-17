@@ -10,7 +10,7 @@
            text-align: center;
        }
         .row{
-            margin-top: 60px;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -18,6 +18,10 @@
 <h3 class="title">列表</h3>
 <div class="container">
     <div class="row">
+        {% if show_add_btn %}
+            <a href="{{ add_url }}"><button class="btn btn-primary">添加</button></a>
+        {% endif %}
+        <hr>
         <table class="table table_border">
             <thead>
             <tr>
